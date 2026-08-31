@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>명상 - 홈</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div id="background-layer" class="background-layer"></div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">홈</a>
+        <a href="meditate.html" data-nav="meditate">명상</a>
+        <a href="journey.html" data-nav="journey">기록</a>
+      </nav>
+
+      <main class="content">
+        <section class="hero">
+          <span id="time-label" class="eyebrow">아침</span>
+          <h1 id="greeting">좋은 아침이에요</h1>
+          <p id="sub-message">차분한 마음으로 하루를 시작해보세요.</p>
+        </section>
+
+        <section>
+          <h2 class="section-title">지금 추천하는 명상</h2>
+          <div id="recommendations" class="card-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/time.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

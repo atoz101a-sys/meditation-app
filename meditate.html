@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>명상 - 명상하기</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div id="background-layer" class="background-layer"></div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">홈</a>
+        <a href="meditate.html" data-nav="meditate">명상</a>
+        <a href="journey.html" data-nav="journey">기록</a>
+      </nav>
+
+      <main class="content">
+        <section id="list-view">
+          <div class="hero">
+            <span class="eyebrow">명상 목록</span>
+            <h1>나에게 맞는 명상을 선택하세요</h1>
+            <p>시간대별로 추천되는 명상을 골라 바로 시작할 수 있어요.</p>
+          </div>
+
+          <div class="filter-tabs">
+            <button class="filter-tab active" type="button" data-filter="current">현재 시간대</button>
+            <button class="filter-tab" type="button" data-filter="all">전체</button>
+            <button class="filter-tab" type="button" data-filter="dawn">새벽</button>
+            <button class="filter-tab" type="button" data-filter="morning">아침</button>
+            <button class="filter-tab" type="button" data-filter="day">낮</button>
+            <button class="filter-tab" type="button" data-filter="sunset">노을</button>
+            <button class="filter-tab" type="button" data-filter="night">밤</button>
+          </div>
+
+          <div id="meditation-list" class="card-grid"></div>
+        </section>
+
+        <section id="player-view" class="player-layout" hidden>
+          <div class="player-card player-card--timer">
+            <h1 id="player-title">명상 제목</h1>
+            <p id="player-description">설명</p>
+            <div id="timer-display" class="timer-display">10:00</div>
+            <div class="player-actions">
+              <button id="start-btn" class="btn" type="button">재생 시작</button>
+              <button id="pause-btn" class="btn btn-secondary" type="button">일시정지</button>
+              <button id="complete-btn" class="btn btn-secondary" type="button">완료</button>
+            </div>
+          </div>
+
+          <div class="player-card player-card--video">
+            <div class="video-resize-box" id="video-resize-box" title="모서리를 드래그해 크기 조절">
+              <div class="video-wrapper" id="video-wrapper">
+                <div id="player-placeholder" class="player-placeholder">
+                  <img id="player-thumb" alt="명상 영상 썸네일" />
+                  <p id="player-placeholder-text">재생 시작을 누르면 명상이 시작됩니다.</p>
+                </div>
+                <div id="youtube-player" hidden></div>
+              </div>
+              <div class="video-resize-handle" aria-label="크기 조절"></div>
+            </div>
+            <p class="player-fallback">
+              영상이 재생되지 않으면
+              <a id="youtube-link" href="#" target="_blank" rel="noopener noreferrer">YouTube에서 열기</a>
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="completion-modal" class="modal-backdrop">
+      <div class="modal">
+        <h2>명상을 완료했어요 🌿</h2>
+        <p id="modal-message">오늘 10분 명상했습니다.</p>
+        <a class="btn" id="modal-close" href="journey.html">기록 보기</a>
+      </div>
+    </div>
+
+    <script src="js/time.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/meditate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>명상 - 나의 기록</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="background-layer">
+        <img src="assets/images/낮.jpg" alt="기록 페이지 배경" loading="lazy" />
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">홈</a>
+        <a href="meditate.html" data-nav="meditate">명상</a>
+        <a href="journey.html" data-nav="journey">기록</a>
+      </nav>
+
+      <main class="content">
+        <section class="hero">
+          <span class="eyebrow">나의 여정</span>
+          <h1>명상 기록을 확인해보세요</h1>
+          <p>꾸준한 명상이 쌓일수록 마음도 조금씩 가벼워집니다.</p>
+        </section>
+
+        <section class="stats-grid">
+          <div class="stat-card">
+            <strong id="total-sessions">0</strong>
+            <span>🧘 명상 횟수</span>
+          </div>
+          <div class="stat-card">
+            <strong id="total-minutes">0</strong>
+            <span>⏱ 총 명상 시간(분)</span>
+          </div>
+          <div class="stat-card">
+            <strong id="current-streak">0</strong>
+            <span>🔥 연속 일수</span>
+          </div>
+        </section>
+
+        <section class="card" style="margin-bottom: 24px">
+          <div class="calendar-header">
+            <h2 class="section-title" id="calendar-title">2026년 8월</h2>
+            <div>
+              <button id="prev-month" class="btn btn-secondary" type="button">이전</button>
+              <button id="next-month" class="btn btn-secondary" type="button">다음</button>
+            </div>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+          <div id="session-detail" class="detail-panel empty">날짜를 선택하면 명상 기록을 볼 수 있습니다.</div>
+        </section>
+
+        <section class="card">
+          <h2 class="section-title">7일 챌린지</h2>
+          <div id="challenge-list" class="challenge-list"></div>
+        </section>
+
+        <p class="notice">명상 기록은 이 브라우저에만 저장됩니다. 다른 기기나 브라우저에서는 기록이 보이지 않을 수 있어요.</p>
+      </main>
+    </div>
+
+    <script src="js/time.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/journey.js"></script>
+  </body>
+</html>
